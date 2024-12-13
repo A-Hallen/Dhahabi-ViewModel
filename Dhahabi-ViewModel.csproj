@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <NoPackageAnalysis>true</NoPackageAnalysis>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <IsRoslynComponent>true</IsRoslynComponent>
+        <AnalysisLevel>latest-all</AnalysisLevel>
+        <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+        <Authors>Hallen</Authors>
+        <Description>Un generador de código para simplificar la implementación de INotifyPropertyChanged.</Description>
+        <PackageId>Dhahabi.ViewModel</PackageId>
+        <Version>1.0.2</Version>
+        <Tags>codegenerator C# INotifyPropertyChanged dhahabi</Tags>
+        <PackageIcon>Icono.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="README.md">
+            <Pack>true</Pack>
+            <PackagePath>README.md</PackagePath>
+        </None>
+        <None Update="Icono.png">
+            <Pack>True</Pack>
+            <PackagePath>Icono.png</PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- Package the generator in the analyzer directory of the nuget package -->
+        <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.11.0" PrivateAssets="all"/>
+        <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.2" PrivateAssets="all"/>
+        <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="3.11.0" PrivateAssets="all"/>
+    </ItemGroup>
+</Project>
