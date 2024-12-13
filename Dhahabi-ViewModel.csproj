@@ -16,12 +16,17 @@
         <Tags>codegenerator C# INotifyPropertyChanged dhahabi</Tags>
         <PackageIcon>Icono.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
     </PropertyGroup>
 
     <ItemGroup>
         <None Update="README.md">
             <Pack>true</Pack>
             <PackagePath>README.md</PackagePath>
+        </None>
+        <None Update="LICENSE">
+            <Pack>true</Pack>
+            <PackagePath>LICENSE</PackagePath>
         </None>
         <None Update="Icono.png">
             <Pack>True</Pack>
